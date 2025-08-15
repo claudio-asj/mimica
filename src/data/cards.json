@@ -1,0 +1,552 @@
+[
+  {
+    "id": "c001",
+    "category": "Ação",
+    "prompts": [
+      "pular corda",
+      "assobiar",
+      "escovar os dentes",
+      "trocar pneu",
+      "fazer café"
+    ]
+  },
+  {
+    "id": "c002",
+    "category": "Objeto",
+    "prompts": [
+      "binóculo",
+      "guarda-chuva",
+      "grampeador",
+      "bússola",
+      "pendrive"
+    ]
+  },
+  {
+    "id": "c003",
+    "category": "Animal",
+    "prompts": [
+      "ornitorrinco",
+      "bicho-preguiça",
+      "pinguim",
+      "tucano",
+      "golfinho"
+    ]
+  },
+  {
+    "id": "c004",
+    "category": "Lugar",
+    "prompts": [
+      "farol",
+      "estação de trem",
+      "floresta",
+      "biblioteca",
+      "praia"
+    ]
+  },
+  {
+    "id": "c005",
+    "category": "Pessoa/Personagem",
+    "prompts": [
+      "bailarino",
+      "astronauta",
+      "mágico",
+      "detetive",
+      "samurai"
+    ]
+  },
+  {
+    "id": "c006",
+    "category": "Coisa",
+    "prompts": [
+      "arco-íris",
+      "neblina",
+      "eco",
+      "sombra",
+      "tempestade"
+    ]
+  },
+  {
+    "id": "c007",
+    "category": "Livre",
+    "prompts": [
+      "internet",
+      "emoção",
+      "meme",
+      "vitória",
+      "sossego"
+    ]
+  },
+  {
+    "id": "c008",
+    "category": "Ação",
+    "prompts": [
+      "andar de skate",
+      "costurar",
+      "pintar parede",
+      "varrer chão",
+      "plantar árvore"
+    ]
+  },
+  {
+    "id": "c009",
+    "category": "Objeto",
+    "prompts": [
+      "micro-ondas",
+      "perfurador de papel",
+      "liquidificador",
+      "fita adesiva",
+      "mochila"
+    ]
+  },
+  {
+    "id": "c010",
+    "category": "Animal",
+    "prompts": [
+      "águia",
+      "camaleão",
+      "salamandra",
+      "capivara",
+      "lhama"
+    ]
+  },
+  {
+    "id": "c011",
+    "category": "Lugar",
+    "prompts": [
+      "castelo",
+      "zoológico",
+      "aeroporto",
+      "fazenda",
+      "cinema"
+    ]
+  },
+  {
+    "id": "c012",
+    "category": "Pessoa/Personagem",
+    "prompts": [
+      "rei",
+      "cientista",
+      "padroeiro",
+      "piloto",
+      "mergulhador"
+    ]
+  },
+  {
+    "id": "c013",
+    "category": "Coisa",
+    "prompts": [
+      "gravidade",
+      "eco",
+      "areia movediça",
+      "miragem",
+      "silêncio"
+    ]
+  },
+  {
+    "id": "c014",
+    "category": "Livre",
+    "prompts": [
+      "plot twist",
+      "spoiler",
+      "viralizar",
+      "crush",
+      "sorte"
+    ]
+  },
+  {
+    "id": "c015",
+    "category": "Ação",
+    "prompts": [
+      "construir cabana",
+      "fazer trilha",
+      "martelar prego",
+      "fazer massagem",
+      "abrir cofre"
+    ]
+  },
+  {
+    "id": "c016",
+    "category": "Objeto",
+    "prompts": [
+      "teclado mecânico",
+      "rolo de massa",
+      "tesoura",
+      "telefone antigo",
+      "ampulheta"
+    ]
+  },
+  {
+    "id": "c017",
+    "category": "Animal",
+    "prompts": [
+      "panda",
+      "raposa",
+      "coruja",
+      "lagosta",
+      "sucuri"
+    ]
+  },
+  {
+    "id": "c018",
+    "category": "Lugar",
+    "prompts": [
+      "deserto",
+      "vulcão",
+      "pista de corrida",
+      "quadra de tênis",
+      "submarino"
+    ]
+  },
+  {
+    "id": "c019",
+    "category": "Pessoa/Personagem",
+    "prompts": [
+      "pirata",
+      "fazendeiro",
+      "programador",
+      "bombeiro",
+      "nutricionista"
+    ]
+  },
+  {
+    "id": "c020",
+    "category": "Coisa",
+    "prompts": [
+      "frio na barriga",
+      "cheiro de chuva",
+      "pressa",
+      "tédio",
+      "nostalgia"
+    ]
+  },
+  {
+    "id": "c021",
+    "category": "Livre",
+    "prompts": [
+      "bug",
+      "level up",
+      "maratona",
+      "plot armor",
+      "spoiler-free"
+    ]
+  },
+  {
+    "id": "c022",
+    "category": "Ação",
+    "prompts": [
+      "cortar cebola",
+      "andar de patins",
+      "dobrar roupa",
+      "desenhar mapa",
+      "pular muralha"
+    ]
+  },
+  {
+    "id": "c023",
+    "category": "Objeto",
+    "prompts": [
+      "lanterna",
+      "cadeado",
+      "aspirador",
+      "patinete",
+      "capacho"
+    ]
+  },
+  {
+    "id": "c024",
+    "category": "Animal",
+    "prompts": [
+      "beija-flor",
+      "morcego",
+      "caracol",
+      "caranguejo",
+      "jacaré"
+    ]
+  },
+  {
+    "id": "c025",
+    "category": "Lugar",
+    "prompts": [
+      "lago congelado",
+      "ponte suspensa",
+      "mercado",
+      "laboratório",
+      "loja de brinquedos"
+    ]
+  },
+  {
+    "id": "c026",
+    "category": "Pessoa/Personagem",
+    "prompts": [
+      "barbeiro",
+      "youtuber",
+      "arqueólogo",
+      "bibliotecário",
+      "chefe de cozinha"
+    ]
+  },
+  {
+    "id": "c027",
+    "category": "Coisa",
+    "prompts": [
+      "fila",
+      "eco",
+      "ping pong de ideias",
+      "apagão",
+      "frio polar"
+    ]
+  },
+  {
+    "id": "c028",
+    "category": "Livre",
+    "prompts": [
+      "plotar gráfico",
+      "quase lá",
+      "gol de placa",
+      "virada",
+      "clutch"
+    ]
+  },
+  {
+    "id": "c029",
+    "category": "Ação",
+    "prompts": [
+      "trocar fralda",
+      "regatar gato",
+      "gravar podcast",
+      "amarrar cadarço",
+      "fazer careta"
+    ]
+  },
+  {
+    "id": "c030",
+    "category": "Objeto",
+    "prompts": [
+      "violino",
+      "escada",
+      "régua",
+      "canoa",
+      "bule de chá"
+    ]
+  },
+  {
+    "id": "c031",
+    "category": "Animal",
+    "prompts": [
+      "ganso",
+      "onça-pintada",
+      "enguia",
+      "lhama",
+      "guaxinim"
+    ]
+  },
+  {
+    "id": "c032",
+    "category": "Lugar",
+    "prompts": [
+      "camping",
+      "cachoeira",
+      "torre",
+      "roda-gigante",
+      "cidade fantasma"
+    ]
+  },
+  {
+    "id": "c033",
+    "category": "Pessoa/Personagem",
+    "prompts": [
+      "arqueiro",
+      "dublador",
+      "maratonista",
+      "tatuador",
+      "florista"
+    ]
+  },
+  {
+    "id": "c034",
+    "category": "Coisa",
+    "prompts": [
+      "deja vu",
+      "pressentimento",
+      "calafrio",
+      "apagão de ideias",
+      "timidez"
+    ]
+  },
+  {
+    "id": "c035",
+    "category": "Livre",
+    "prompts": [
+      "GG",
+      "AFK",
+      "nerd raiz",
+      "vibe",
+      "caô"
+    ]
+  },
+  {
+    "id": "c036",
+    "category": "Ação",
+    "prompts": [
+      "pular amarelinha",
+      "fazer panqueca",
+      "dar cambalhota",
+      "malabarismo",
+      "pôr a mesa"
+    ]
+  },
+  {
+    "id": "c037",
+    "category": "Ação",
+    "prompts": [
+      "carregar sacolas",
+      "apagar velas",
+      "abrir guarda-roupa",
+      "fazer malabarismo com frutas",
+      "encher balão"
+    ]
+  },
+  {
+    "id": "c038",
+    "category": "Objeto",
+    "prompts": [
+      "câmera fotográfica",
+      "cinto de segurança",
+      "prancheta",
+      "batedeira",
+      "lupa"
+    ]
+  },
+  {
+    "id": "c039",
+    "category": "Animal",
+    "prompts": [
+      "ouriço-do-mar",
+      "falcão",
+      "gorila",
+      "cavalo-marinho",
+      "pavão"
+    ]
+  },
+  {
+    "id": "c040",
+    "category": "Lugar",
+    "prompts": [
+      "parque de diversões",
+      "igreja",
+      "hospital",
+      "ilha deserta",
+      "mercado flutuante"
+    ]
+  },
+  {
+    "id": "c041",
+    "category": "Pessoa/Personagem",
+    "prompts": [
+      "pescador",
+      "professor",
+      "cantor",
+      "palhaço",
+      "explorador"
+    ]
+  },
+  {
+    "id": "c042",
+    "category": "Coisa",
+    "prompts": [
+      "brilho",
+      "poeira",
+      "calor intenso",
+      "chuva de meteoros",
+      "neve"
+    ]
+  },
+  {
+    "id": "c043",
+    "category": "Livre",
+    "prompts": [
+      "segredo",
+      "azar",
+      "confusão",
+      "aventura",
+      "desafio"
+    ]
+  },
+  {
+    "id": "c044",
+    "category": "Ação",
+    "prompts": [
+      "regar plantas",
+      "passar roupa",
+      "escrever carta",
+      "cavar buraco",
+      "amassar pão"
+    ]
+  },
+  {
+    "id": "c045",
+    "category": "Objeto",
+    "prompts": [
+      "trompete",
+      "guarda-volumes",
+      "microfone",
+      "cesto de lixo",
+      "frigideira"
+    ]
+  },
+  {
+    "id": "c046",
+    "category": "Animal",
+    "prompts": [
+      "lontra",
+      "javali",
+      "pavão-real",
+      "rinoceronte",
+      "camelo"
+    ]
+  },
+  {
+    "id": "c047",
+    "category": "Lugar",
+    "prompts": [
+      "piscina",
+      "porto",
+      "museu",
+      "posto de gasolina",
+      "estrada de terra"
+    ]
+  },
+  {
+    "id": "c048",
+    "category": "Pessoa/Personagem",
+    "prompts": [
+      "jogador de xadrez",
+      "guia turístico",
+      "cantor de ópera",
+      "dançarino de rua",
+      "carpinteiro"
+    ]
+  },
+  {
+    "id": "c049",
+    "category": "Coisa",
+    "prompts": [
+      "vento forte",
+      "gelo",
+      "luz do sol",
+      "onda gigante",
+      "areia"
+    ]
+  },
+  {
+    "id": "c050",
+    "category": "Livre",
+    "prompts": [
+      "final feliz",
+      "reviravolta",
+      "descoberta",
+      "mistério",
+      "momento épico"
+    ]
+  }
+]
