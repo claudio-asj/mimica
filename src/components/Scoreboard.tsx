@@ -17,7 +17,7 @@ export default function Scoreboard() {
           <Badge
             className={
               t.points === leader && leader > 0
-                ? "border-amber-500 text-amber-700 dark:text-amber-300"
+                ? "bg-yellow-500 text-amber-700"
                 : ""
             }
           >

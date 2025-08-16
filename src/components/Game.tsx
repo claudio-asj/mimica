@@ -1,7 +1,7 @@
 import { useMemo, useState, useEffect } from "react";
 import { useGame } from "../store";
 import data from "../data/cards.json";
-import type { Card as CardType } from "../types";
+import type { Card as CardType, Team } from "../types";
 import { Button } from "./ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "./ui/card";
 import { Badge } from "./ui/badge";
@@ -13,13 +13,14 @@ import GeneratedCardPreview from "./GeneratedCardPreview";
 import {
   RefreshCw,
   Play,
-  Pause,
   SkipForward,
   Trophy,
   Brain,
   Eye,
+  Check,
 } from "lucide-react";
 import toast from "react-hot-toast";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "./ui/dialog";
 
 export default function Game() {
   const {
@@ -68,11 +69,15 @@ export default function Game() {
     toast("Carta passada!", { icon: "⏭️" });
   };
 
+  const [winner, setWinner] = useState<Team | null>(null);
+
   const finish = () => {
     endTurn(false);
-    const winner = teams.find((t) => t.points >= settings.targetPoints);
+    console.log(winner);
+    const winner2 = teams.find((t) => t.points >= settings.targetPoints);
     if (winner) {
-      toast.success(`🎉 ${winner.name} venceu a partida!`);
+      setWinner(winner2 as Team);
+      alert("oi");
     } else {
       nextTeam();
     }
@@ -152,11 +157,11 @@ export default function Game() {
         </Card>
       )}
 
-      <div className="grid lg:grid-cols-3 gap-4">
+      <div className="grid lg:grid-cols-3 gap-4 overflow-scroll">
         <div className="lg:col-span-2 grid gap-4">
           <Card>
             <CardHeader>
-              <CardTitle className="flex items-center justify-between">
+              <CardTitle className="flex items-center justify-between flex-wrap">
                 <div className="flex items-center gap-3">
                   <span>
                     Rodada — {teams[turn.currentTeamIndex]?.name ?? "—"}
@@ -228,7 +233,7 @@ export default function Game() {
                           : `+1 ponto (${getCardProgress().remaining} restantes)`}
                       </Button>
                       <Button variant="outline" onClick={finish}>
-                        <Pause className="h-4 w-4 mr-2" />
+                        <Check className="h-4 w-4 mr-2" />
                         Encerrar
                       </Button>
                       <Button variant="ghost" onClick={pass}>
@@ -412,6 +417,40 @@ export default function Game() {
         open={showGeneratedCardPreview}
         onOpenChange={setShowGeneratedCardPreview}
       />
+
+      <Dialog open={isWinning}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Fim do jogo!</DialogTitle>
+          </DialogHeader>
+          <DialogContent>
+            <div className="text-lg">
+              <p className="text-xl font-bold text-primary mb-12">
+                O time {currentTeam.name} ganhou!
+              </p>
+            </div>
+
+            <img
+              src="https://cdn-icons-png.freepik.com/512/1184/1184688.png?ga=GA1.1.1603856312.1755355773"
+              alt="icone de trofeu"
+              className="w-16"
+            />
+
+            <div className="overflow-scroll pb-4">
+              <History />
+            </div>
+
+            <Button
+              variant="outline"
+              onClick={() => {
+                window.location.reload();
+              }}
+            >
+              Fechar
+            </Button>
+          </DialogContent>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
