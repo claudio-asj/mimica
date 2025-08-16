@@ -163,6 +163,8 @@ export default function Setup({ onStart }: { onStart: () => void }) {
                       <SelectItem value="60">1 minuto</SelectItem>
                       <SelectItem value="90">1 minuto e 30s</SelectItem>
                       <SelectItem value="120">2 minutos</SelectItem>
+                      <SelectItem value="180">3 minutos</SelectItem>
+                      <SelectItem value="300">5 minutos</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -193,6 +195,11 @@ export default function Setup({ onStart }: { onStart: () => void }) {
                       <SelectItem value="10">10 pontos</SelectItem>
                       <SelectItem value="15">15 pontos</SelectItem>
                       <SelectItem value="20">20 pontos</SelectItem>
+                      <SelectItem value="30">30 pontos</SelectItem>
+                      <SelectItem value="40">40 pontos</SelectItem>
+                      <SelectItem value="50">50 pontos</SelectItem>
+                      <SelectItem value="60">60 pontos</SelectItem>
+                      <SelectItem value="70">70 pontos</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
