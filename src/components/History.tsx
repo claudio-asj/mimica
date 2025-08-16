@@ -1,11 +1,12 @@
 import { useGame } from "../store";
 import cards from "../data/cards.json";
 import { Table, TableBody, TableCell, TableHead, TableRow } from "./ui/table";
+import type { Card } from "../types";
 
 export default function History() {
   const { history, teams } = useGame();
   const idxById = Object.fromEntries(teams.map((t, i) => [t.id, i]));
-  const cardById = Object.fromEntries((cards as any[]).map((c) => [c.id, c]));
+  const cardById = Object.fromEntries((cards as Card[]).map((c) => [c.id, c]));
 
   return (
     <div className="rounded-lg border">
