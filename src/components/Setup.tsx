@@ -38,18 +38,18 @@ export default function Setup({ onStart }: { onStart: () => void }) {
   return (
     <div className="grid gap-6 max-w-4xl mx-auto">
       <Tabs defaultValue="teams" className="w-full">
-        <TabsList className="grid w-full grid-cols-4">
+        <TabsList className="flex justify-between w-full">
           <TabsTrigger value="teams" className="flex items-center gap-2">
             <Users className="h-4 w-4" />
-            Times
+            <span className="sr-only">Times</span>
           </TabsTrigger>
           <TabsTrigger value="settings" className="flex items-center gap-2">
             <Settings className="h-4 w-4" />
-            Configurações
+            <span className="sr-only">Configurações</span>
           </TabsTrigger>
           <TabsTrigger value="ai" className="flex items-center gap-2">
             <Brain className="h-4 w-4" />
-            IA Geradora
+            <span className="sr-only">IA</span>
             {settings.useAI && (
               <Badge variant="secondary" className="text-xs ml-1">
                 Ativa
@@ -58,7 +58,7 @@ export default function Setup({ onStart }: { onStart: () => void }) {
           </TabsTrigger>
           <TabsTrigger value="statistics" className="flex items-center gap-2">
             <BarChart3 className="h-4 w-4" />
-            Estatísticas
+            <span className="sr-only">Estatística</span>
           </TabsTrigger>
         </TabsList>
 
