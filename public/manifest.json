@@ -1,0 +1,29 @@
+{
+  "name": "Mímica - Jogo de Charadas Inteligente",
+  "short_name": "Mímica",
+  "description": "Um jogo de mímica/charadas moderno com geração de cartas por IA. Jogue com times, timer customizável e cartas infinitas.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FEFBFB",
+  "theme_color": "#F58B00",
+  "orientation": "any",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

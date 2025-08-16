@@ -163,13 +163,13 @@ export default function CardStatistics() {
                 Total de Cartas
               </div>
             </div>
-            <div className="text-center p-4 rounded-lg bg-green-50">
+            <div className="text-center p-4 rounded-lg bg-accent">
               <div className="text-2xl font-bold text-green-600">
                 {analytics.deckComposition.traditional}
               </div>
               <div className="text-sm text-muted-foreground">Tradicionais</div>
             </div>
-            <div className="text-center p-4 rounded-lg bg-blue-50">
+            <div className="text-center p-4 rounded-lg bg-accent">
               <div className="text-2xl font-bold text-blue-600">
                 {analytics.deckComposition.aiGenerated}
               </div>

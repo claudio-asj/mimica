@@ -393,7 +393,7 @@ export default function Setup({ onStart }: { onStart: () => void }) {
 
               <div className="flex gap-2 mt-2">
                 {teams.map((team) => (
-                  <Badge key={team.id} variant="outline">
+                  <Badge key={team.id} variant="default">
                     <p>{team.name}</p>
                   </Badge>
                 ))}
