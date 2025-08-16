@@ -1,6 +1,13 @@
 import { useGame } from "../store";
 import cards from "../data/cards.json";
-import { Table, TableBody, TableCell, TableHead, TableRow } from "./ui/table";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "./ui/table";
 import type { Card } from "../types";
 
 export default function History() {
@@ -11,36 +18,51 @@ export default function History() {
   return (
     <div className="rounded-lg border">
       <Table>
-        <TableHead>
+        <TableHeader>
           <TableRow>
-            <TableCell>Quando</TableCell>
-            <TableCell>Time</TableCell>
-            <TableCell>Carta</TableCell>
-            <TableCell>Acertos</TableCell>
-            <TableCell>Passou?</TableCell>
+            <TableHead className="px-2">Quando</TableHead>
+            <TableHead className="px-2">Time</TableHead>
+            <TableHead className="px-2">Carta</TableHead>
+            <TableHead className="px-2 text-center">Acertos</TableHead>
+            <TableHead className="px-2 text-center">Passou?</TableHead>
           </TableRow>
-        </TableHead>
+        </TableHeader>
+
         <TableBody>
-          {history
-            .slice()
-            .reverse()
-            .map((h, i) => (
-              <TableRow key={i}>
-                <TableCell>
-                  {new Date(h.timestamp).toLocaleTimeString()}
-                </TableCell>
-                <TableCell>{teams[idxById[h.teamId]]?.name ?? "?"}</TableCell>
-                <TableCell>
-                  {cardById[h.cardId]?.category ?? ""} —{" "}
-                  {cardById[h.cardId]?.prompts?.[0]}
-                </TableCell>
-                <TableCell>{h.correct}</TableCell>
-                <TableCell>{h.passed ? "Sim" : "Não"}</TableCell>
-              </TableRow>
-            ))}
-          {!history.length && (
+          {history.length > 0 ? (
+            history
+              .slice()
+              .reverse()
+              .map((h, i) => {
+                const team = teams[idxById[h.teamId]];
+                const card = cardById[h.cardId];
+                return (
+                  <TableRow key={i}>
+                    <TableCell className="px-2">
+                      {new Date(h.timestamp).toLocaleTimeString([], {
+                        hour: "2-digit",
+                        minute: "2-digit",
+                      })}
+                    </TableCell>
+                    <TableCell className="px-2">{team?.name ?? "?"}</TableCell>
+                    <TableCell className="px-2">
+                      {card
+                        ? `${card.category ?? ""} — ${card.prompts?.[0] ?? ""}`
+                        : "?"}
+                    </TableCell>
+                    <TableCell className="text-center">{h.correct}</TableCell>
+                    <TableCell className="text-center">
+                      {h.passed ? "Sim" : "Não"}
+                    </TableCell>
+                  </TableRow>
+                );
+              })
+          ) : (
             <TableRow>
-              <TableCell colSpan={5} className="text-muted-foreground p-4">
+              <TableCell
+                colSpan={5}
+                className="text-muted-foreground p-4 text-center"
+              >
                 Sem histórico por enquanto.
               </TableCell>
             </TableRow>
