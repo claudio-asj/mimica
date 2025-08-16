@@ -383,29 +383,35 @@ export default function Setup({ onStart }: { onStart: () => void }) {
       </Tabs>
 
       <Card>
-        <CardContent className="pt-6">
-          <div className="flex items-center justify-between">
-            <div className="space-y-1">
-              <p className="font-medium">Pronto para começar?</p>
-              <p className="text-sm text-muted-foreground">
-                {canStart
-                  ? `${teams.length} times configurados. Boa diversão!`
-                  : "Configure pelo menos 2 times para iniciar."}
-              </p>
-            </div>
-            <Button
-              disabled={!canStart}
-              onClick={() => {
-                startGame();
-                onStart();
-              }}
-              size="lg"
-              className="px-8"
-            >
-              <Play className="h-4 w-4 mr-2" />
-              Iniciar Partida
-            </Button>
+        <CardContent className="mt-6">
+          <div className="space-y-1 mb-8">
+            <p className="font-medium">Pronto para começar?</p>
+            <p className="text-sm text-muted-foreground">
+              {canStart
+                ? `${teams.length} times configurados. Boa diversão!`
+                : "Configure pelo menos 2 times para iniciar."}
+
+              <div className="flex gap-2 mt-2">
+                {teams.map((team) => (
+                  <Badge key={team.id} variant="outline">
+                    <p>{team.name}</p>
+                  </Badge>
+                ))}
+              </div>
+            </p>
           </div>
+          <Button
+            disabled={!canStart}
+            onClick={() => {
+              startGame();
+              onStart();
+            }}
+            size="lg"
+            className="w-full"
+          >
+            <Play className="h-4 w-4 mr-2" />
+            Iniciar Partida
+          </Button>
         </CardContent>
       </Card>
 

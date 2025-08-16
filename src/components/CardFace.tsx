@@ -4,7 +4,7 @@ import { Badge } from "./ui/badge";
 
 export default function CardFace({ card }: { card: CardType }) {
   return (
-    <Card className="w-full md:w-[520px]">
+    <Card className="w-full max-w-[520px]">
       <CardHeader>
         <CardTitle className="flex items-center justify-between">
           Carta

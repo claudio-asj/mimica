@@ -13,6 +13,12 @@ import {
 } from "./ui/dialog";
 import { Eye, Copy, CheckCircle, Sparkles, X, RefreshCw } from "lucide-react";
 import CardFace from "./CardFace";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "./ui/accordion";
 
 interface GeneratedCardPreviewProps {
   open: boolean;
@@ -105,9 +111,14 @@ export default function GeneratedCardPreview({
 
         <div className="space-y-4">
           {/* Card Preview */}
-          <div className="border-2 border-dashed border-primary/20 rounded-lg p-4 bg-primary/5">
-            <CardFace card={lastGeneratedCard} />
-          </div>
+          <Accordion type="single" collapsible className="w-full">
+            <AccordionItem value="item-1">
+              <AccordionTrigger>Veja a carta!</AccordionTrigger>
+              <AccordionContent>
+                <CardFace card={lastGeneratedCard} />
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
 
           {/* Card Details */}
           <div className="space-y-3">
