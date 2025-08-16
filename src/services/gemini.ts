@@ -20,7 +20,7 @@ class GeminiService {
     null;
 
   constructor() {
-    // API key will be set via environment variable or direct call
+    // A chave da API será definida via variável de ambiente ou chamada direta
   }
 
   initialize(apiKey: string) {
@@ -29,7 +29,7 @@ class GeminiService {
       this.model = this.genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
       return true;
     } catch (error) {
-      env.error("Failed to initialize Gemini:", error);
+      env.error("Falha ao inicializar o Gemini:", error);
       return false;
     }
   }
@@ -138,11 +138,9 @@ Do not include explanations, just the JSON array.`;
     const cards: Card[] = [];
 
     try {
-      // Generate cards in batches to avoid token limits
-      const batchSize = Math.min(count, 5);
-      const batches = Math.ceil(count / batchSize);
-
-      for (let i = 0; i < batches; i++) {
+      // O objetivo é gerar 'count' cards.
+      // Cada chamada à API irá gerar um card com 5 prompts.
+      for (let i = 0; i < count; i++) {
         const prompt = this.getCategoryPrompt(category, difficulty, language);
 
         if (!this.model) {
@@ -153,55 +151,53 @@ Do not include explanations, just the JSON array.`;
         const response = await result.response;
         const text = response.text();
 
-        // Parse the JSON response
-        let prompts: string[];
+        // Analisa a resposta JSON
+        let generatedPrompts: string[];
         try {
-          // Clean the response to extract JSON
+          // Limpa a resposta para extrair o JSON
           const jsonMatch = text.match(/\[.*?\]/s);
           if (!jsonMatch) {
-            throw new Error("No JSON array found in response");
+            throw new Error("Nenhum array JSON encontrado na resposta");
           }
-          prompts = JSON.parse(jsonMatch[0]);
+          generatedPrompts = JSON.parse(jsonMatch[0]);
 
-          if (!Array.isArray(prompts)) {
-            throw new Error("Response is not an array");
+          if (
+            !Array.isArray(generatedPrompts) ||
+            generatedPrompts.length === 0
+          ) {
+            throw new Error("A resposta não é um array válido ou está vazia");
           }
         } catch {
-          env.error("Failed to parse Gemini response:", text);
+          env.error("Falha ao analisar a resposta do Gemini:", text);
           return {
             cards,
-            error: "Failed to parse AI response. Please try again.",
+            error:
+              "Falha ao analisar a resposta da IA. Por favor, tente novamente.",
           };
         }
 
-        // Create cards from prompts
-        const remainingCards = count - cards.length;
-        const cardsToCreate = Math.min(prompts.length, remainingCards);
+        // Cria UM card com TODOS os prompts da resposta da API.
+        cards.push({
+          id: `gemini-${Date.now()}-${i}`,
+          category,
+          // Atribui o array inteiro de prompts, e não apenas um elemento
+          prompts: generatedPrompts.map((p) => p.trim()).filter((p) => p),
+        });
 
-        for (let j = 0; j < cardsToCreate; j++) {
-          if (prompts[j] && prompts[j].trim()) {
-            cards.push({
-              id: `gemini-${Date.now()}-${i}-${j}`,
-              category,
-              prompts: [prompts[j].trim()],
-            });
-          }
-        }
-
-        // Small delay between requests to avoid rate limiting
-        if (i < batches - 1) {
+        // Pequeno atraso entre as requisições se estivermos gerando mais de um card
+        if (i < count - 1) {
           await new Promise((resolve) => setTimeout(resolve, 500));
         }
       }
-
+      console.log(cards);
       return { cards };
     } catch (error: unknown) {
-      env.error("Error generating cards with Gemini:", error);
+      env.error("Erro ao gerar cards com o Gemini:", error);
       return {
         cards,
         error:
           (error as Error).message ||
-          "Failed to generate cards. Please check your API key and try again.",
+          "Falha ao gerar cards. Verifique sua chave de API e tente novamente.",
       };
     }
   }
@@ -223,7 +219,7 @@ Do not include explanations, just the JSON array.`;
     return result.cards[0];
   }
 
-  // Validate API key without making a full request
+  // Valida a chave da API sem fazer uma requisição completa
   async validateApiKey(apiKey: string): Promise<boolean> {
     try {
       const tempGenAI = new GoogleGenerativeAI(apiKey);
@@ -231,19 +227,17 @@ Do not include explanations, just the JSON array.`;
         model: "gemini-1.5-flash",
       });
 
-      // Make a minimal test request
+      // Faz uma requisição mínima de teste
       const result = await tempModel.generateContent("Test");
       await result.response;
 
       return true;
     } catch (error) {
-      env.error("API key validation failed:", error);
+      env.error("Falha na validação da chave da API:", error);
       return false;
     }
   }
 }
 
-// Export singleton instance
+// Exporta a instância singleton
 export const geminiService = new GeminiService();
-
-// Types are already exported at the top of the file

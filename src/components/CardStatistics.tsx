@@ -35,6 +35,7 @@ export default function CardStatistics() {
   // Calculate analytics
   useEffect(() => {
     const combinedAnalytics = cardAnalyticsService.analyzeCombinedDeck(deck);
+    console.log(combinedAnalytics);
     setAnalytics(combinedAnalytics);
   }, [deck]);
 
